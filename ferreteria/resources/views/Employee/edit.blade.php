@@ -2,7 +2,7 @@
 @section('plantillaweb')
     <h2>Formulario edicion de registro</h2>
 
-    <form action="{{ route('employee.uptade',$employee) }}" method="post">
+    <form action="{{ route('employee.update',$employee) }}" method="post">
         @method('PUT')
         {{ csrf_field() }}
         <div class="col-md-6 col-lg-6 col-sm-12 ">
@@ -39,6 +39,6 @@
             <input type="time" name="hora_salida" value="{{ $employee->hora_salida }}">
 
             <div class="col">
-                <input type="submit" name="btn_enviar" value="Registrar">
+                <input type="submit" name="btn_enviar" value="Aceptar">
     </form>
 @endsection
