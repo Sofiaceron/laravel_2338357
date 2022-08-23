@@ -17,7 +17,7 @@
           <a class="nav-link" href="{{url('http://127.0.0.1:8000')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{'perfil_doctor/create'}}" method="post">Perfil</a>
+          <a class="nav-link" href="{{'perfildoc/create'}}" method="post">Perfil doctor</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{'quote/create'}}" method="post">Citas</a>

@@ -1,6 +1,7 @@
 <?php
-use App\Http\Controllers\PerfilDoctorController;
-use App\Models\perfil_doctor;
+
+use App\Http\Controllers\PerfildocController;
+use App\Models\Perfildoc;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,4 @@ Route::get('/', function () {
 });
 
 
-Route::resource('perfil_doctor',PerfilDoctorController::class);
+Route::resource('perfildoc',PerfildocController::class);

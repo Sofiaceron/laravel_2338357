@@ -13,6 +13,7 @@
                 <th scope="col">Total a pagar</th>
                 <th scope="col">No. de empleado</th>
                 <th scope="col">Forma de pago</th>
+                <th scope="col">Servicios</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                     <td>{{ $quote->total_pago }}</td>
                     <td>{{ $quote->employee_id }}</td>
                     <td>{{ $quote->waytopay_id }}</td>
+                    <td>{{ $quote->servicio_id }}</td>
                     
                 </tr>
             @endforeach

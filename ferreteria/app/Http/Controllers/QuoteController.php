@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Servicio;
 use App\Models\Employee;
 use App\Models\Quote;
 use App\Models\Waytopay;
@@ -29,7 +30,8 @@ class QuoteController extends Controller
     {
         $employees = Employee::All();
         $waytopays = Waytopay::All();
-        return view('Quote.create', compact('employees','waytopays'));
+        $servicios = Servicio::All();
+        return view('Quote.create', compact('employees','waytopays','servicios'));
     }
 
     /**
@@ -48,6 +50,7 @@ class QuoteController extends Controller
         $quote->total_pago = $request->total_pago;
         $quote->employee_id = $request->employee_id;
         $quote->waytopay_id = $request->waytopay_id;
+        $quote->servicio_id = $request->servicio_id;
         $quote->save();
         return redirect()->route('quote.create');
     }
@@ -71,7 +74,7 @@ class QuoteController extends Controller
      */
     public function edit(Quote $quote)
     {
-        //
+        return view('Quote.edit', compact('quote'));
     }
 
     /**
@@ -83,7 +86,16 @@ class QuoteController extends Controller
      */
     public function update(Request $request, Quote $quote)
     {
-        //
+        $quote->hora_programada = $request->hora_programada;
+        $quote->hora_inicio = $request->hora_inicio;
+        $quote->hora_fin = $request->hora_fin;
+        $quote->tiempo_total = $request->tiempo_total;
+        $quote->total_pago = $request->total_pago;
+        $quote->employee_id = $request->employee_id;
+        $quote->waytopay_id = $request->waytopay_id;
+        $quote->servicio_id = $request->servicio_id;
+        $quote->save();
+        return redirect()->route('quote.index');
     }
 
     /**
@@ -94,6 +106,7 @@ class QuoteController extends Controller
      */
     public function destroy(Quote $quote)
     {
-        //
+        $quote->delete();
+        return redirect()->route('quote.index');
     }
 }

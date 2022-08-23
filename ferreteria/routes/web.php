@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\PromocionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\WaytopayController;
 use App\Http\Controllers\QuoteController;
+
+use App\Models\Promocion;
+use App\Models\Servicio;
+use App\Models\Quote;
 use App\Models\Employee;
 use App\Models\Waytopay;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +32,15 @@ Route::get('/', function () {
 });
 
 //Rutas para empleado
-Route::resource('employee',EmployeeController::class);
+Route::resource('employee', EmployeeController::class);
 
 
 //Rutas para forma_pago
-Route::resource('waytopay',WaytopayController::class);
+Route::resource('waytopay', WaytopayController::class);
 
 //Rutas para citas
-Route::resource('quote',QuoteController::class);
+Route::resource('quote', QuoteController::class);
+
+Route::resource('servicio', ServicioController::class);
+
+Route::resource('promocion', PromocionController::class);

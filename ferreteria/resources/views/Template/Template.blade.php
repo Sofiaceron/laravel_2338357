@@ -26,6 +26,12 @@
             <a class="nav-link" href="{{'waytopay/create'}}" method="post">Forma de pago</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{'servicio/create'}}" method="post">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{'promocion/create'}}" method="post">Promociones</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{'Ejercicio4'}}" method="post">Salir</a>
           </li>
       </ul>
